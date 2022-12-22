@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+    />
+    <title>File Input</title>
+    <style>
+      body {
+    background-color: aliceblue;
+  }
+
+   .countainer {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+  }
+
+  th {
+    border: 1px solid white;
+    color: white;
+    background-color: rgb(58, 58, 83);
+    padding: 35px;
+    letter-spacing: 1px;
+  }
+
+  td {
+    border: 1px solid white;
+    color: white;
+    background-color: rgb(184, 131, 203);
+    padding: 10px;
+    letter-spacing: 1px;
+    font-weight: normal;
+  }
+
+  .img-css {
+    width: 50px;
+    height: 50px;
+
+  }
+
+  .img-div {
+    font-weight: bold;
+    padding: 50px;
+  }
+
+  #file {
+    display: none;
+  }
+    </style>
+  </head>
+  <body>
+    
+    <div class="countainer">
+      <table>
+        <thead>
+          <tr >
+            <th>Photograph</th>
+            <th>Name</th>
+            <th>Last Name</th>
+            <th>Number</th>
+            <th>Birthday</th>
+            <th>Choose</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- //birinci kişi// -->
+          <tr id="test">
+            <td class="img-div">
+              <img
+                src="https://png.pngitem.com/pimgs/s/22-223925_female-avatar-female-avatar-no-face-hd-png.png"
+                alt=""
+                id="photo1"
+                class="img-css"
+              />
+            </td>
+            <td>
+              <form>
+                <label for="name">Your name:</label>
+                <input type="text" id="name1">
+              </form>
+            </td>
+            <td>
+              <form>
+                <label for="surname">Your surname:</label>
+                <input type="text" id="surname1">
+              </form>
+            </td>
+            <td>
+              <form>
+                <label for="number">Telephone number:</label>
+                <input type="number" id="number1">
+              </form>  
+            </td>
+            <td>
+              <form>
+                <label for="birthday">Birthday</label>
+                <input type="date" id="birthday1">
+              </form>
+            </td>
+            </td>
+           <td>
+            <div>
+              <label for="image_uploads1" id="uploadBtn">Choose Photo</label>
+              <input
+                type="file"
+                id="image_uploads1"
+                name="image_uploads"
+                accept=".jpg, .jpeg, .png"/>
+            </div>
+           </td>
+            <td>
+              <button onclick="getVariables(1)">Ekle</button> 
+              <i class="fa-solid fa-check"></i> 
+              <br><br>
+              <button onclick="remove('test')">Sil</button> 
+              <i class="fa-sharp fa-solid fa-trash"></i>
+            </td>
+          </tr>
+          <tr>
+                  <!-- //ikinci kişi// -->
+            <td class="img-div">
+              <img
+                src="https://png.pngtree.com/png-vector/20190710/ourmid/pngtree-user-vector-avatar-png-image_1541962.jpg" 
+                class="img-css"
+                id="photo2"
+                alt=""
+              />
+            </td>
+            <td>
+              <form>
+                <label for="name">Your name:</label>
+                <input type="text" id="name2">
+              </form>
+            </td>
+            <td>
+              <form>
+                <label for="surname">Your surname:</label>
+                <input type="text" id="surname2">
+              </form>
+            </td>
+            <td>
+              <form>
+                <label for="number">Telephone number:</label>
+                <input type="number" id="number2">
+              </form>  
+            </td>
+            <td>
+              <form>
+                <label for="birthday">Birthday</label>
+                <input type="date" id="birthday2">
+              </form>
+            </td>
+            <td>
+              <div>
+                <label for="image_uploads2">Choose images to upload (PNG, JPG)</label>
+                <input
+                  type="file"
+                  id="image_uploads2"
+                  name="image_uploads"
+                  accept=".jpg, .jpeg, .png"/>
+              </div>
+            </td>
+           </td>
+            <td>
+              <button onclick="getVariables(2)">Ekle</button> 
+              <i class="fa-solid fa-check"></i>
+              <br><br>
+              <button onclick="getVariables(2)">Sil</button> 
+              <i class="fa-sharp fa-solid fa-trash"></i>
+            </td>
+          </tr>
+          <tr>
+                  <!-- //üçüncü kişi// -->
+            <td class="img-div">
+              <img
+                src="https://toppng.com/uploads/preview/avatar-png-11554021819gij72acuim.png"
+                class="img-css"
+                id="photo3"
+                alt=""
+              />
+            </td>
+            <td>
+              <form>
+                <label for="name">Your name:</label>
+                <input type="text" id="name3">
+              </form>
+            </td>
+            <td>
+              <form>
+                <label for="surname">Your surname:</label>
+                <input type="text" id="surname3">
+              </form>
+            </td>
+            <td>
+              <form>
+                <label for="number">Telephone number:</label>
+                <input type="number" id="number3">
+              </form>  
+            </td>
+            <td>
+              <form>
+                <label for="birthday">Birthday</label>
+                <input type="date" id="birthday3">
+              </form>
+              <td>
+                <div>
+                  <label for="image_uploads3">Choose images to upload (PNG, JPG)</label>
+                  <input
+                    type="file"
+                    id="image_uploads3"
+                    name="image_uploads"
+                    accept=".jpg, .jpeg, .png"
+                    multiple />
+                </div>
+              </td>
+             
+           </td>
+            <td>
+              <button onclick="getVariables(3)">Ekle</button> 
+              <i class="fa-solid fa-check"></i>
+              <br><br>
+              <button onclick="getVariables(3)">Sil</button> 
+              <i class="fa-sharp fa-solid fa-trash"></i>
+            </td>
+          </tr>
+          <script>
+
+            
+            function getValue(id){
+            return document.getElementById(id).value;
+            }
+
+            function getVariables(id){
+              var result = {
+                name: document.getElementById("name" + id).value,
+                surname: document.getElementById("surname" + id).value,
+                number: document.getElementById("number" + id).value,
+                birthday: document.getElementById("birthday" + id).value,
+              };
+              console.log(result);
+              return result;
+            }
+
+            function remove(id){
+              const element = document.getElementById(id);
+              element.remove();
+            }
+
+
+
+            // file upload //
+
+            const imgDiv = document.querySelector("img-div");
+            const img = document.querySelector("#photo1");
+            const file = document.querySelector("#image_uploads1");
+            const uploadBtn = document.querySelector("#uploadBtn")
+        
+            
+            file.addEventListener('change' , function () {
+              const choosedFile = this.files[0];
+
+
+              if(choosedFile) {
+              const reader = new FileReader();
+
+
+              reader.addEventListener ('load' , function (){
+                img.setAttribute('src', reader.result);
+              });
+
+              reader.readAsDataURL (choosedFile);
+             }
+
+            });
+
+           
+          
+          </script>
+        </tbody>
+      </table>
+    </div>
+  
+  </body>
+</html>
